@@ -1,0 +1,67 @@
+:root,
+page {
+  --color-ivory: #FFFDF8;
+  --color-surface: #FFFFFF;
+  --color-cream-pink: #FFB7C5;
+  --color-cream-pink-soft: #FFF0F3;
+  --color-primary-action: #FF8FA6;
+  --color-oat-yellow: #FFE58A;
+  --color-oat-yellow-soft: #FFF8DA;
+  --color-ink: #1F1F1F;
+  --color-ink-soft: #5F5B59;
+  --color-muted: #96908C;
+  --color-line: #ECE6E1;
+  --color-line-strong: #D8D0CA;
+  --color-success: #79A98B;
+  --color-warning: #D9A85F;
+  --color-error: #D97A7A;
+
+  --font-family-base: PingFang SC, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-size-display: 30px;
+  --font-size-page-title: 24px;
+  --font-size-section-title: 18px;
+  --font-size-card-title: 16px;
+  --font-size-body: 15px;
+  --font-size-caption: 13px;
+  --font-size-micro: 11px;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-display: 1.2;
+  --line-height-title: 1.25;
+  --line-height-body: 1.5;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --page-padding-x: 20px;
+
+  --radius-s: 12px;
+  --radius-m: 16px;
+  --radius-l: 20px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  --border-subtle: 1px solid #ECE6E1;
+  --border-standard: 1px solid #D8D0CA;
+  --border-selected: 1.5px solid #FF8FA6;
+  --border-focus: 2px solid #FFB7C5;
+  --border-upload-dashed: 1.5px dashed #5F5B59;
+
+  --shadow-soft: 0 4px 14px rgba(52, 42, 38, 0.05);
+  --shadow-card: 0 6px 20px rgba(52, 42, 38, 0.07);
+  --shadow-elevated: 0 12px 32px rgba(52, 42, 38, 0.12);
+
+  --motion-fast: 120ms;
+  --motion-normal: 220ms;
+  --motion-slow: 300ms;
+  --motion-ease: ease;
+}
+

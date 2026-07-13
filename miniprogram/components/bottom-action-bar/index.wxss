@@ -1,0 +1,25 @@
+.bottom-action-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+  padding: var(--space-3) var(--page-padding-x);
+  background: linear-gradient(180deg, rgba(255, 253, 248, 0), var(--color-ivory) 38%);
+}
+
+.bottom-action-bar--safe {
+  padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom));
+}
+
+.bottom-action-bar__surface {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 56px;
+}
+
+.bottom-action-bar__surface > .secondary {
+  flex: 0 0 auto;
+}
+

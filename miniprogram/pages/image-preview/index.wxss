@@ -1,0 +1,196 @@
+.image-preview-page {
+  min-height: 100vh;
+  padding-bottom: 104px;
+  background: var(--color-ivory);
+}
+
+.image-preview-page__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--page-padding-x) var(--space-8);
+}
+
+.preview-region {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 318px;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+.preview-region::before {
+  display: block;
+  width: 100%;
+  padding-top: 72%;
+  content: "";
+}
+
+.preview-region__placeholder {
+  position: absolute;
+  inset: var(--space-5);
+  overflow: hidden;
+  background: var(--color-cream-pink-soft);
+  border: var(--border-subtle);
+  border-radius: var(--radius-l);
+}
+
+.preview-region__sun {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-6);
+  width: 44px;
+  height: 44px;
+  background: var(--color-oat-yellow);
+  border-radius: var(--radius-full);
+  opacity: 0.76;
+}
+
+.preview-region__mountain {
+  position: absolute;
+  bottom: -24px;
+  width: 180px;
+  height: 120px;
+  background: var(--color-surface);
+  border: var(--border-subtle);
+  border-radius: var(--radius-xl);
+  transform: rotate(34deg);
+}
+
+.preview-region__mountain--back {
+  right: 64px;
+  bottom: -48px;
+  opacity: 0.72;
+}
+
+.preview-region__mountain--front {
+  left: -28px;
+  bottom: -56px;
+}
+
+.preview-region__copy {
+  position: absolute;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  left: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: var(--border-subtle);
+  border-radius: var(--radius-l);
+}
+
+.preview-region__title {
+  color: var(--color-ink);
+  font-size: var(--font-size-card-title);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-title);
+}
+
+.preview-region__caption {
+  margin-top: var(--space-1);
+  color: var(--color-muted);
+  font-size: var(--font-size-caption);
+  line-height: 1.45;
+}
+
+.preview-region--warning {
+  border-color: var(--color-warning);
+}
+
+.preview-region--invalid {
+  border-color: var(--color-error);
+}
+
+.smart-guide {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.smart-guide__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.smart-guide__title {
+  color: var(--color-ink);
+  font-size: var(--font-size-card-title);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-title);
+}
+
+.smart-guide__caption {
+  color: var(--color-ink-soft);
+  font-size: var(--font-size-caption);
+  line-height: 1.45;
+}
+
+.smart-guide__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.smart-guide__item {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  min-width: 0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-ivory);
+  border: var(--border-subtle);
+  border-radius: var(--radius-m);
+}
+
+.smart-guide__dot {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  margin-right: var(--space-2);
+  background: var(--color-success);
+  border-radius: var(--radius-full);
+}
+
+.smart-guide__dot--warning {
+  background: var(--color-warning);
+}
+
+.smart-guide__dot--invalid {
+  background: var(--color-error);
+}
+
+.smart-guide__label {
+  color: var(--color-ink);
+  font-size: var(--font-size-caption);
+  line-height: 1.35;
+}
+
+.support-hint {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-muted);
+}
+
+.support-hint__mark {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  margin-right: var(--space-2);
+  background: var(--color-cream-pink);
+  border-radius: var(--radius-full);
+}
+
+.support-hint__text {
+  font-size: var(--font-size-caption);
+  line-height: 1.45;
+}

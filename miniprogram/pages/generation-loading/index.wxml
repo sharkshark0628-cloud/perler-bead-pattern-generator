@@ -1,0 +1,67 @@
+<view class="generation-loading-page">
+  <top-navigation
+    title="生成图纸"
+    backLabel="返回"
+    bind:back="handleBack"
+  />
+
+  <view class="generation-loading-page__content">
+    <view class="generation-loading-page__hero">
+      <text class="generation-loading-page__title">正在生成拼豆图纸</text>
+      <text class="generation-loading-page__subtitle">
+        {{currentStatusText}} · {{currentStepLabel}}
+      </text>
+    </view>
+
+    <base-card variant="tinted">
+      <view
+        class="generation-visual"
+        aria-hidden="true"
+      >
+        <view class="generation-visual__source">
+          <view class="generation-visual__source-sun"></view>
+          <view class="generation-visual__source-shape generation-visual__source-shape--back"></view>
+          <view class="generation-visual__source-shape generation-visual__source-shape--front"></view>
+        </view>
+
+        <view class="generation-visual__connector"></view>
+
+        <view class="generation-visual__board">
+          <view
+            wx:for="{{animationCells}}"
+            wx:key="key"
+            class="generation-visual__cell generation-visual__cell--{{item.tone}}"
+          ></view>
+        </view>
+      </view>
+    </base-card>
+
+    <base-card>
+      <view
+        class="generation-status"
+        aria-label="{{currentStatusText}}，{{currentStepLabel}}"
+      >
+        <view class="generation-status__mark"></view>
+        <view class="generation-status__copy">
+          <text class="generation-status__eyebrow">当前步骤</text>
+          <text class="generation-status__title">{{currentStepLabel}}</text>
+          <text class="generation-status__description">{{supportingText}}</text>
+        </view>
+      </view>
+    </base-card>
+
+    <base-card>
+      <view class="generation-tip">
+        <text class="generation-tip__label">小提示</text>
+        <text class="generation-tip__text">{{tipText}}</text>
+      </view>
+    </base-card>
+
+    <view
+      wx:if="{{lifecycleStatus === 'failed' || lifecycleStatus === 'timeout'}}"
+      class="generation-loading-page__state-note"
+    >
+      <text>当前状态可从这里展示恢复操作，后续接入真实生成后再启用。</text>
+    </view>
+  </view>
+</view>

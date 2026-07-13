@@ -1,0 +1,78 @@
+.base-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  min-height: 48px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-m);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  transition: transform var(--motion-fast) var(--motion-ease),
+    opacity var(--motion-fast) var(--motion-ease),
+    background-color var(--motion-fast) var(--motion-ease);
+}
+
+.base-button--default {
+  height: 56px;
+}
+
+.base-button--compact {
+  height: 52px;
+}
+
+.base-button--block {
+  width: 100%;
+}
+
+.base-button--primary {
+  color: #FFFFFF;
+  background: var(--color-primary-action);
+}
+
+.base-button--secondary {
+  color: var(--color-ink);
+  background: var(--color-surface);
+  border: var(--border-subtle);
+}
+
+.base-button--text {
+  min-width: 48px;
+  color: var(--color-ink-soft);
+  background: transparent;
+}
+
+.base-button--pressed {
+  transform: scale(0.98);
+}
+
+.base-button[disabled] {
+  opacity: 0.48;
+}
+
+.base-button__indicator {
+  width: 14px;
+  height: 14px;
+  margin-right: var(--space-2);
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--radius-full);
+  animation: base-button-spin var(--motion-slow) linear infinite;
+}
+
+.base-button__label {
+  white-space: nowrap;
+}
+
+@keyframes base-button-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+

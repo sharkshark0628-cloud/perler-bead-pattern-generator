@@ -1,0 +1,49 @@
+.base-card {
+  position: relative;
+  padding: var(--space-5);
+  border-radius: var(--radius-xl);
+  transition: transform var(--motion-fast) var(--motion-ease),
+    border-color var(--motion-fast) var(--motion-ease),
+    background-color var(--motion-fast) var(--motion-ease);
+}
+
+.base-card--primary {
+  background: var(--color-surface);
+  border: var(--border-subtle);
+}
+
+.base-card--tinted {
+  background: var(--color-cream-pink-soft);
+  border: 1px solid rgba(255, 183, 197, 0.28);
+}
+
+.base-card--floating {
+  background: var(--color-surface);
+  border: 0;
+  box-shadow: var(--shadow-elevated);
+}
+
+.base-card.is-selected {
+  background: #FFF7F8;
+  border: var(--border-selected);
+}
+
+.base-card.is-interactive {
+  min-height: 48px;
+}
+
+.base-card--pressed {
+  transform: scale(0.99);
+}
+
+.base-card__state {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 18px;
+  height: 18px;
+  border: 5px solid var(--color-primary-action);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+}
+

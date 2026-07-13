@@ -1,0 +1,32 @@
+@import "./styles/tokens.wxss";
+@import "./styles/typography.wxss";
+@import "./styles/layers.wxss";
+
+page {
+  min-height: 100%;
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+view,
+text,
+button,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  line-height: inherit;
+}
+
+button::after {
+  border: 0;
+}

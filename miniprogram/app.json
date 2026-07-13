@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/image-preview/index",
+    "pages/generation-settings/index",
+    "pages/generation-loading/index",
+    "pages/generation-options/index",
+    "pages/composition-adjustment/index",
+    "pages/pattern-result/index"
+  ],
+  "window": {
+    "backgroundColor": "#FFFDF8",
+    "backgroundTextStyle": "dark",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

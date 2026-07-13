@@ -1,0 +1,109 @@
+<view class="composition-adjustment-page">
+  <top-navigation
+    title="&#35843;&#25972;&#26500;&#22270;"
+    backLabel="&#36820;&#22238;"
+    bind:back="handleBack"
+  />
+
+  <view wx:if="{{hasValidOption}}" class="composition-adjustment-page__content">
+    <view class="composition-adjustment-page__header">
+      <text class="composition-adjustment-page__title">
+        &#35843;&#25972;&#22270;&#26696;&#20301;&#32622;
+      </text>
+      <text class="composition-adjustment-page__subtitle">
+        &#35843;&#25972;&#20027;&#20307;&#20301;&#32622;&#21644;&#22823;&#23567;
+      </text>
+    </view>
+
+    <base-card variant="floating">
+      <view class="composition-preview">
+        <view class="composition-preview__header">
+          <view class="composition-preview__copy">
+            <text class="composition-preview__title">{{fixture.optionLabel}}</text>
+            <text class="composition-preview__caption">
+              &#26500;&#22270;&#39044;&#35272; &#183; &#38750;&#26368;&#32456;&#22270;&#32440;&#25968;&#25454;
+            </text>
+          </view>
+          <text class="composition-preview__chip">&#24050;&#36873;&#25321;</text>
+        </view>
+
+        <view class="composition-board">
+          <view class="composition-board__grid" aria-hidden="true">
+            <view
+              class="composition-subject composition-subject--{{fixture.previewTone}} composition-subject--x-{{adjustment.horizontal}} composition-subject--y-{{adjustment.vertical}} composition-subject--scale-{{adjustment.scale}}"
+            >
+              <view class="composition-subject__shape composition-subject__shape--large"></view>
+              <view class="composition-subject__shape composition-subject__shape--medium"></view>
+              <view class="composition-subject__shape composition-subject__shape--small"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </base-card>
+
+    <base-card>
+      <view class="adjustment-panel">
+        <view
+          wx:for="{{adjustmentGroups}}"
+          wx:key="key"
+          wx:for-item="group"
+          class="adjustment-group"
+        >
+          <text class="adjustment-group__label">{{group.label}}</text>
+          <view class="segmented-control">
+            <view
+              wx:for="{{group.choices}}"
+              wx:key="value"
+              wx:for-item="choice"
+              class="segmented-control__option {{(group.key === 'horizontal' && choice.value === adjustment.horizontal) || (group.key === 'vertical' && choice.value === adjustment.vertical) || (group.key === 'scale' && choice.value === adjustment.scale) ? 'segmented-control__option--selected' : ''}}"
+              data-key="{{group.key}}"
+              data-value="{{choice.value}}"
+              bindtap="handleAdjustmentSelect"
+            >
+              <text>{{choice.label}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </base-card>
+
+    <text class="composition-adjustment-page__note">
+      &#24403;&#21069;&#20165;&#20445;&#23384;&#35821;&#20041;&#26500;&#22270;&#36873;&#25321;&#65292;&#19981;&#20462;&#25913;&#22270;&#32440;&#25968;&#25454;&#12290;
+    </text>
+  </view>
+
+  <view wx:else class="composition-adjustment-page__content">
+    <base-card>
+      <view class="empty-state">
+        <view class="empty-state__mark" aria-hidden="true"></view>
+        <text class="empty-state__title">
+          &#36824;&#27809;&#26377;&#36873;&#25321;&#22270;&#26696;&#26041;&#26696;
+        </text>
+        <text class="empty-state__copy">
+          &#35831;&#20808;&#36820;&#22238;&#26041;&#26696;&#39029;&#65292;&#36873;&#25321;&#19968;&#20010;&#21487;&#29992;&#26041;&#26696;&#12290;
+        </text>
+        <base-button
+          label="&#36820;&#22238;&#36873;&#25321;"
+          bind:press="handleReturnToOptions"
+        />
+      </view>
+    </base-card>
+  </view>
+
+  <bottom-action-bar wx:if="{{hasValidOption}}">
+    <base-button
+      slot="secondary"
+      variant="secondary"
+      label="&#37325;&#26032;&#36873;&#25321;"
+      disabled="{{isGenerating}}"
+      bind:press="handleReselect"
+    />
+    <base-button
+      block
+      label="&#29983;&#25104;&#22270;&#32440;"
+      loading="{{isGenerating}}"
+      loadingLabel="{{generationLoadingLabel}}"
+      bind:press="handleGeneratePattern"
+    />
+  </bottom-action-bar>
+</view>

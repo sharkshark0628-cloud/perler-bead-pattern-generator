@@ -1,0 +1,9 @@
+<view
+  class="base-card base-card--{{variant}} {{selected ? 'is-selected' : ''}} {{interactive ? 'is-interactive' : ''}}"
+  hover-class="{{interactive ? 'base-card--pressed' : 'none'}}"
+  bindtap="handleTap"
+>
+  <view wx:if="{{selected}}" class="base-card__state" aria-hidden="true"></view>
+  <slot></slot>
+</view>
+

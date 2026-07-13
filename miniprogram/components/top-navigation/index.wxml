@@ -1,0 +1,25 @@
+<view class="top-navigation">
+  <button
+    wx:if="{{showBack}}"
+    class="top-navigation__button"
+    hover-class="top-navigation__button--pressed"
+    aria-label="{{backLabel}}"
+    bindtap="handleBack"
+  >
+    <text class="top-navigation__icon">&lt;</text>
+  </button>
+  <view wx:else class="top-navigation__spacer"></view>
+
+  <text class="top-navigation__title">{{title}}</text>
+
+  <button
+    wx:if="{{showMore}}"
+    class="top-navigation__button"
+    hover-class="top-navigation__button--pressed"
+    aria-label="{{moreLabel}}"
+    bindtap="handleMore"
+  >
+    <text class="top-navigation__icon">...</text>
+  </button>
+  <view wx:else class="top-navigation__spacer"></view>
+</view>

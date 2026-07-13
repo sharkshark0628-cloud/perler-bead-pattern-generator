@@ -1,0 +1,60 @@
+<view class="home-page">
+  <view class="home-page__content">
+    <view class="brand-row">
+      <text class="brand-row__name">BeadCraft</text>
+      <button
+        class="brand-row__more"
+        hover-class="brand-row__more--pressed"
+        aria-label="More"
+        bindtap="handleMoreTap"
+      >
+        <text class="brand-row__more-icon">...</text>
+      </button>
+    </view>
+
+    <base-card variant="tinted">
+      <view class="hero-card">
+        <view class="hero-card__copy">
+          <text class="hero-card__eyebrow">Hello Maker!</text>
+          <text class="hero-card__title">把喜欢的图片</text>
+          <text class="hero-card__title">变成拼豆图纸 ✨</text>
+        </view>
+        <view class="hero-card__character" aria-hidden="true">
+          <view class="brand-character">
+            <view class="brand-character__head">
+              <view class="brand-character__eye"></view>
+              <view class="brand-character__eye"></view>
+            </view>
+            <view class="brand-character__body"></view>
+          </view>
+        </view>
+      </view>
+    </base-card>
+
+    <base-card interactive bind:press="handleUploadTap">
+      <view class="upload-card">
+        <view class="upload-card__icon" aria-hidden="true">+</view>
+        <text class="upload-card__title">上传图片</text>
+        <text class="upload-card__meta">支持 JPG / PNG / WEBP</text>
+      </view>
+    </base-card>
+
+    <view class="quick-explanation" aria-label="Creation steps">
+      <view
+        wx:for="{{explanationItems}}"
+        wx:key="label"
+        class="quick-explanation__item"
+      >
+        <view class="quick-explanation__mark">{{index + 1}}</view>
+        <text class="quick-explanation__label">{{item.label}}</text>
+      </view>
+    </view>
+  </view>
+
+  <bottom-tab-bar
+    activeKey="home"
+    items="{{tabItems}}"
+    bind:change="handleTabChange"
+  />
+</view>
+

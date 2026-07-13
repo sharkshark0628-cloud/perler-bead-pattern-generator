@@ -1,0 +1,16 @@
+<view class="bottom-tab-bar {{safeArea ? 'bottom-tab-bar--safe' : ''}}">
+  <view class="bottom-tab-bar__surface">
+    <button
+      wx:for="{{items}}"
+      wx:key="key"
+      class="bottom-tab-bar__item {{item.key === activeKey ? 'is-active' : ''}}"
+      hover-class="bottom-tab-bar__item--pressed"
+      data-key="{{item.key}}"
+      aria-label="{{item.ariaLabel || item.label}}"
+      bindtap="handleChange"
+    >
+      <text wx:if="{{item.icon}}" class="bottom-tab-bar__icon">{{item.icon}}</text>
+      <text class="bottom-tab-bar__label">{{item.label}}</text>
+    </button>
+  </view>
+</view>

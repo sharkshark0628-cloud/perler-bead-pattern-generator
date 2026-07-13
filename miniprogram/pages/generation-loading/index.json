@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "base-card": "/components/base-card/index",
+    "top-navigation": "/components/top-navigation/index"
+  }
+}

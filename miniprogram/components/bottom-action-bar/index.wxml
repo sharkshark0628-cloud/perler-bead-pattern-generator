@@ -1,0 +1,7 @@
+<view class="bottom-action-bar {{safeArea ? 'bottom-action-bar--safe' : ''}}">
+  <view class="bottom-action-bar__surface">
+    <slot name="secondary"></slot>
+    <slot></slot>
+  </view>
+</view>
+

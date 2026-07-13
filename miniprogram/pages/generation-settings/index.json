@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "base-button": "/components/base-button/index",
+    "base-card": "/components/base-card/index",
+    "bottom-action-bar": "/components/bottom-action-bar/index",
+    "top-navigation": "/components/top-navigation/index"
+  }
+}

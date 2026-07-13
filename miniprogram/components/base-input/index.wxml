@@ -1,0 +1,18 @@
+<view class="base-input {{focused ? 'is-focused' : ''}} {{error ? 'has-error' : ''}} {{disabled ? 'is-disabled' : ''}}">
+  <text wx:if="{{label}}" class="base-input__label">{{label}}</text>
+  <input
+    class="base-input__control"
+    value="{{value}}"
+    type="{{type}}"
+    maxlength="{{maxlength}}"
+    placeholder="{{placeholder}}"
+    placeholder-class="base-input__placeholder"
+    disabled="{{disabled}}"
+    bindinput="handleInput"
+    bindfocus="handleFocus"
+    bindblur="handleBlur"
+    bindconfirm="handleConfirm"
+  />
+  <text wx:if="{{error}}" class="base-input__message">{{error}}</text>
+</view>
+

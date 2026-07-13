@@ -1,0 +1,18 @@
+.surface-primary {
+  background: var(--color-surface);
+  border: var(--border-subtle);
+  border-radius: var(--radius-xl);
+}
+
+.surface-tinted {
+  background: var(--color-cream-pink-soft);
+  border: 1px solid rgba(255, 183, 197, 0.28);
+  border-radius: var(--radius-xl);
+}
+
+.surface-floating {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-elevated);
+}
+

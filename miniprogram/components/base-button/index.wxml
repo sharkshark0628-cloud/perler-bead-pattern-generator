@@ -1,0 +1,12 @@
+<button
+  class="base-button base-button--{{variant}} base-button--{{size}} {{block ? 'base-button--block' : ''}} {{loading ? 'is-loading' : ''}}"
+  hover-class="base-button--pressed"
+  disabled="{{disabled || loading}}"
+  aria-label="{{ariaLabel || label}}"
+  bindtap="handleTap"
+>
+  <view wx:if="{{loading}}" class="base-button__indicator" aria-hidden="true"></view>
+  <text class="base-button__label">{{loading && loadingLabel ? loadingLabel : label}}</text>
+  <slot></slot>
+</button>
+

@@ -1,0 +1,55 @@
+<view class="image-preview-page">
+  <top-navigation
+    title="图片预览"
+    backLabel="返回"
+    bind:back="handleBack"
+  />
+
+  <view class="image-preview-page__content">
+    <view class="preview-region preview-region--{{previewState}}">
+      <view class="preview-region__placeholder" aria-hidden="true">
+        <view class="preview-region__sun"></view>
+        <view class="preview-region__mountain preview-region__mountain--back"></view>
+        <view class="preview-region__mountain preview-region__mountain--front"></view>
+      </view>
+      <view class="preview-region__copy">
+        <text class="preview-region__title">图片预览占位</text>
+        <text class="preview-region__caption">后续将展示你选择的图片</text>
+      </view>
+    </view>
+
+    <base-card>
+      <view class="smart-guide">
+        <view class="smart-guide__header">
+          <text class="smart-guide__title">Smart Image Guide</text>
+          <text class="smart-guide__caption">这样的图片更容易生成清晰的拼豆图纸</text>
+        </view>
+
+        <view class="smart-guide__list">
+          <view
+            wx:for="{{guideItems}}"
+            wx:key="label"
+            class="smart-guide__item"
+          >
+            <view class="smart-guide__dot smart-guide__dot--{{previewState}}"></view>
+            <text class="smart-guide__label">{{item.label}}</text>
+          </view>
+        </view>
+      </view>
+    </base-card>
+
+    <view class="support-hint">
+      <view class="support-hint__mark"></view>
+      <text class="support-hint__text">当前仅展示预览结构，不会上传、分析或保存图片。</text>
+    </view>
+  </view>
+
+  <bottom-action-bar>
+    <base-button
+      block
+      label="下一步"
+      bind:press="handleNext"
+    />
+  </bottom-action-bar>
+</view>
+

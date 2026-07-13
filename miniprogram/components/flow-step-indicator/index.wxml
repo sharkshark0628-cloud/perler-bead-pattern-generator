@@ -1,0 +1,11 @@
+<view class="flow-step-indicator" aria-label="{{ariaLabel}}">
+  <view
+    wx:for="{{steps}}"
+    wx:key="key"
+    class="flow-step-indicator__item {{index === currentIndex ? 'is-current' : ''}} {{index < currentIndex ? 'is-complete' : ''}}"
+  >
+    <view class="flow-step-indicator__dot"></view>
+    <text class="flow-step-indicator__label">{{item.label}}</text>
+  </view>
+</view>
+

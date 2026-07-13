@@ -1,0 +1,155 @@
+<view class="pattern-result-page">
+  <top-navigation
+    title="&#22270;&#32440;&#32467;&#26524;"
+    backLabel="&#36820;&#22238;"
+    bind:back="handleBack"
+  />
+
+  <view wx:if="{{hasValidPattern}}" class="pattern-result-page__content">
+    <view class="result-summary">
+      <text class="result-summary__title">&#22270;&#32440;&#29983;&#25104;&#23436;&#25104;</text>
+      <text class="result-summary__subtitle">
+        &#36825;&#26159;&#22522;&#20110;&#24050;&#36873;&#26041;&#26696;&#21644;&#26500;&#22270;&#35843;&#25972;&#30340;&#21069;&#31471;&#39044;&#35272;
+      </text>
+    </view>
+
+    <base-card variant="floating">
+      <view class="pattern-card">
+        <view class="pattern-card__header">
+          <view class="pattern-card__copy">
+            <text class="pattern-card__title">&#25340;&#35910;&#22270;&#32440;&#39044;&#35272;</text>
+            <text class="pattern-card__caption">
+              {{preview.optionLabel}} &#183; {{preview.sizeLabel}}
+            </text>
+          </view>
+          <text class="pattern-card__chip">{{brandLabel}}</text>
+        </view>
+
+        <view
+          class="pattern-preview"
+          aria-label="&#25171;&#24320;&#22823;&#22270;&#39044;&#35272;"
+          bindtap="handlePreviewTap"
+        >
+          <view
+            wx:for="{{preview.rows}}"
+            wx:key="key"
+            wx:for-item="row"
+            class="pattern-preview__row"
+          >
+            <view
+              wx:for="{{row.cells}}"
+              wx:key="key"
+              wx:for-item="cell"
+              class="pattern-preview__cell pattern-preview__cell--{{cell.tone}}"
+            >
+              <text wx:if="{{cell.symbol}}" class="pattern-preview__symbol">
+                {{cell.symbol}}
+              </text>
+            </view>
+          </view>
+        </view>
+
+        <text class="pattern-card__hint">&#28857;&#20987;&#22270;&#32440;&#21487;&#26597;&#30475;&#22823;&#22270;</text>
+      </view>
+    </base-card>
+
+    <view class="metadata-grid">
+      <base-card>
+        <view class="metadata-item">
+          <text class="metadata-item__label">&#23610;&#23544;</text>
+          <text class="metadata-item__value">{{preview.sizeLabel}}</text>
+        </view>
+      </base-card>
+      <base-card>
+        <view class="metadata-item">
+          <text class="metadata-item__label">&#22270;&#26696;&#31867;&#22411;</text>
+          <text class="metadata-item__value">{{preview.optionLabel}}</text>
+        </view>
+      </base-card>
+      <base-card>
+        <view class="metadata-item">
+          <text class="metadata-item__label">&#33394;&#21495;&#21697;&#29260;</text>
+          <text class="metadata-item__value">{{brandLabel}}</text>
+        </view>
+      </base-card>
+      <base-card>
+        <view class="metadata-item">
+          <text class="metadata-item__label">&#26500;&#22270;</text>
+          <text class="metadata-item__value">
+            {{preview.compositionSummary}}
+          </text>
+        </view>
+      </base-card>
+    </view>
+  </view>
+
+  <view wx:else class="pattern-result-page__content">
+    <base-card>
+      <view class="empty-state">
+        <view class="empty-state__mark" aria-hidden="true"></view>
+        <text class="empty-state__title">&#22270;&#32440;&#36824;&#26410;&#20934;&#22791;&#22909;</text>
+        <text class="empty-state__copy">
+          &#35831;&#20808;&#36873;&#25321;&#22270;&#26696;&#26041;&#26696;&#24182;&#23436;&#25104;&#26500;&#22270;&#35843;&#25972;
+        </text>
+        <base-button
+          label="&#36820;&#22238;&#36873;&#25321;"
+          bind:press="handleReturnToOptions"
+        />
+      </view>
+    </base-card>
+  </view>
+
+  <bottom-action-bar wx:if="{{hasValidPattern}}">
+    <base-button
+      slot="secondary"
+      variant="secondary"
+      label="&#37325;&#26032;&#36873;&#25321;"
+      bind:press="handleReselect"
+    />
+    <base-button
+      block
+      label="&#20445;&#23384;&#22270;&#32440;"
+      bind:press="handleSave"
+    />
+  </bottom-action-bar>
+
+  <view wx:if="{{isPreviewOpen}}" class="preview-overlay">
+    <view class="preview-overlay__scrim" bindtap="handlePreviewClose"></view>
+    <view class="preview-overlay__surface" role="dialog" aria-modal="true">
+      <view class="preview-overlay__header">
+        <view class="preview-overlay__copy">
+          <text class="preview-overlay__title">{{preview.optionLabel}}</text>
+          <text class="preview-overlay__caption">
+            {{preview.sizeLabel}} &#183; {{preview.compositionSummary}}
+          </text>
+        </view>
+        <base-button
+          variant="text"
+          size="compact"
+          label="&#20851;&#38381;"
+          bind:press="handlePreviewClose"
+        />
+      </view>
+
+      <view class="pattern-preview pattern-preview--large">
+        <view
+          wx:for="{{preview.rows}}"
+          wx:key="key"
+          wx:for-item="row"
+          class="pattern-preview__row"
+        >
+          <view
+            wx:for="{{row.cells}}"
+            wx:key="key"
+            wx:for-item="cell"
+            class="pattern-preview__cell pattern-preview__cell--{{cell.tone}}"
+          >
+            <text wx:if="{{cell.symbol}}" class="pattern-preview__symbol">
+              {{cell.symbol}}
+            </text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "base-card": "/components/base-card/index",
+    "bottom-tab-bar": "/components/bottom-tab-bar/index"
+  },
+  "navigationStyle": "custom"
+}
