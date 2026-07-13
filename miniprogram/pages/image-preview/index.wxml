@@ -7,14 +7,25 @@
 
   <view class="image-preview-page__content">
     <view class="preview-region preview-region--{{previewState}}">
-      <view class="preview-region__placeholder" aria-hidden="true">
+      <image
+        wx:if="{{hasSelectedImage}}"
+        class="preview-region__image"
+        src="{{selectedImagePath}}"
+        mode="aspectFit"
+        show-menu-by-longpress="{{false}}"
+      />
+      <view wx:else class="preview-region__placeholder" aria-hidden="true">
         <view class="preview-region__sun"></view>
         <view class="preview-region__mountain preview-region__mountain--back"></view>
         <view class="preview-region__mountain preview-region__mountain--front"></view>
       </view>
       <view class="preview-region__copy">
-        <text class="preview-region__title">图片预览占位</text>
-        <text class="preview-region__caption">后续将展示你选择的图片</text>
+        <text class="preview-region__title">
+          {{hasSelectedImage ? '图片已选择' : '图片预览占位'}}
+        </text>
+        <text class="preview-region__caption">
+          {{hasSelectedImage ? imageSizeLabel : '后续将展示你选择的图片'}}
+        </text>
       </view>
     </view>
 
@@ -22,7 +33,9 @@
       <view class="smart-guide">
         <view class="smart-guide__header">
           <text class="smart-guide__title">Smart Image Guide</text>
-          <text class="smart-guide__caption">这样的图片更容易生成清晰的拼豆图纸</text>
+          <text class="smart-guide__caption">
+            这样的图片更容易生成清晰的拼豆图纸
+          </text>
         </view>
 
         <view class="smart-guide__list">
@@ -40,7 +53,9 @@
 
     <view class="support-hint">
       <view class="support-hint__mark"></view>
-      <text class="support-hint__text">当前仅展示预览结构，不会上传、分析或保存图片。</text>
+      <text class="support-hint__text">
+        当前仅展示本地预览，不会上传、分析或保存图片。
+      </text>
     </view>
   </view>
 
@@ -52,4 +67,3 @@
     />
   </bottom-action-bar>
 </view>
-

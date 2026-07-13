@@ -40,6 +40,17 @@
   border-radius: var(--radius-l);
 }
 
+.preview-region__image {
+  position: absolute;
+  inset: var(--space-5);
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  background: var(--color-ivory);
+  border: var(--border-subtle);
+  border-radius: var(--radius-l);
+}
+
 .preview-region__sun {
   position: absolute;
   top: var(--space-5);
